@@ -2,8 +2,7 @@ import { Environment } from './environment.model';
 
 export const environment: Environment = {
   production: false,
-  // baseUrl: 'https://api-dev.morpkhai.web.id',
-  baseUrl: '',
+  baseUrl: 'https://api-dev.morpkhai.web.id',
   auth0: {
     domainUrl: 'dev-47jflxp326zl1lm2.us.auth0.com',
     clientId: 'DxI6JzXaHa65OfrWR0JPuC6XzzYRwrmM',

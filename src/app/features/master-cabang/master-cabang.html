@@ -1,0 +1,17 @@
+<p>master-cabang works!</p>
+
+<p>List of Cabang:</p>
+
+@for (cabang of cabang$(); track cabang.id) {
+  <p>{{ cabang.id }} - {{ cabang.name }}</p>
+} @empty {
+  <p class="text-gray-500">Belum ada data cabang.</p>
+}
+
+<button
+  type="button"
+  (click)="addCabang()"
+  class="border-2 border-amber-500 bg-amber-300 hover:cursor-pointer hover:bg-amber-700 px-4 py-2 rounded"
+>
+  Tambah Cabang
+</button>

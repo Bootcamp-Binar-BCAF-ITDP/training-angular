@@ -1,0 +1,67 @@
+
+<div class="font-sans text-gray-800 antialiased">
+  <app-navbar/>
+  <header class="bg-gradient-to-br from-gray-50 to-gray-200 py-20 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <span
+        class="bg-green-100 text-green-500 px-3 py-1 rounded-full text-sm font-semibold inline-block mb-6 shadow-sm"
+      >
+        New Release
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
+        Build Better Products <span class="text-green-600">Faster</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
+        Empower your workflow with our cutting-edge Angular solution. Designed for scale, speed, and
+        simplicity.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button
+          (click)="onGetStarted()"
+          class="bg-green-600 hover:bg-greentext-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-colors cursor-pointer"
+        >
+          Get Started Free
+        </button>
+        <button
+          class="bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 font-semibold px-6 py-3 rounded-lg shadow-sm transition-colors cursor-pointer"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-20 px-6 max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-12">Why Choose Us</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for (feature of features; track feature.id) {
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-left hover:shadow-md transition-shadow"
+        >
+          <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
+          <p class="text-gray-600 leading-relaxed">{{ feature.description }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="bg-green-900 text-white py-16 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Ready to transform your workflow?</h2>
+      <p class="text-green-200 text-lg mb-8">
+        Join thousands of developers building amazing applications today.
+      </p>
+      <button
+        (click)="onGetStarted()"
+        class="bg-green-600 hover:bg-green-500 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition-colors cursor-pointer"
+      >
+        Start Your Free Trial
+      </button>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
+    <p>&copy; 2026 YourCompanyName. All rights reserved.</p>
+  </footer>
+</div>
+

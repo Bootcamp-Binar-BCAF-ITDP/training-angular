@@ -1,0 +1,47 @@
+<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 font-sans">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
+
+    <!-- Logo -->
+    <a href="#" class="text-xl font-bold text-gray-900 flex items-center gap-2 no-underline">
+      <span class="text-2xl">⚡</span> Test
+    </a>
+
+    <!-- Mobile Menu / Desktop Links -->
+    <ul
+      class="flex flex-col items-center py-8 gap-6 absolute top-full left-0 w-full bg-white shadow-xl transition-all duration-300 ease-in-out
+             md:flex md:flex-row md:items-center md:gap-8 md:static md:w-auto md:bg-transparent md:p-0 md:shadow-none md:translate-y-0 md:opacity-100 md:pointer-events-auto"
+      [class.translate-y-0]="isMenuOpen"
+      [class.opacity-100]="isMenuOpen"
+      [class.pointer-events-auto]="isMenuOpen"
+      [class.-translate-y-full]="!isMenuOpen"
+      [class.opacity-0]="!isMenuOpen"
+      [class.pointer-events-none]="!isMenuOpen"
+    >
+      <li *ngFor="let link of navLinks">
+        <a [href]="link.href" (click)="isMenuOpen = false" class="text-gray-600 font-medium hover:text-blue-600 transition-colors no-underline">
+          {{ link.label }}
+        </a>
+      </li>
+
+      <li class="md:hidden">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors cursor-pointer border-none" (click)="onNavAction()">
+          Login
+        </button>
+      </li>
+    </ul>
+
+    <div class="hidden md:block">
+      <button class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-colors cursor-pointer border-none" (click)="onNavAction()">
+        Login
+      </button>
+    </div>
+
+    <!-- Mobile Hamburger Toggle -->
+    <div class="flex flex-col justify-between w-6 h-5 cursor-pointer md:hidden relative" (click)="toggleMenu()">
+      <span class="w-6 h-0.5 bg-gray-900 rounded-sm transition-all duration-300 origin-center" [class.translate-y-2]="isMenuOpen" [class.rotate-45]="isMenuOpen"></span>
+      <span class="w-6 h-0.5 bg-gray-900 rounded-sm transition-all duration-300" [class.opacity-0]="isMenuOpen"></span>
+      <span class="w-6 h-0.5 bg-gray-900 rounded-sm transition-all duration-300 origin-center" [class.-translate-y-2.5]="isMenuOpen" [class.-rotate-45]="isMenuOpen"></span>
+    </div>
+
+  </div>
+</nav>

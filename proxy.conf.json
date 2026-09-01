@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://api-dev.morpkhai.web.id",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
